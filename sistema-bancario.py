@@ -1,37 +1,11 @@
-# desafio-dio-sistema-bancario
-Desafio de projeto da plataforma [DIO](https://web.dio.me/) - Construindo um sistema bancário em Python
-
-## Objetivo:
-
-Criar um sistema bancário com as 3 operações: sacar, depositar e visualizar o extrato bancário.
-
-## Requisitos:
-
-* Utilizar a linguagem **Python**
-
-### 1. Operação de Depósito
-
-* Depositar valores positivos
-* Armazenar todas operações de depósito para listar no extrato
-
-### 2. Operação de Saque
-
-* Limitar a quantidade de saques diários em 3
-* Limitar o valor de cada operação de saque em R$ 500,00
-* Caso não tenha saldo em conta, informar que a operação não poderá ser realizada
-* Armazenar todas operações de saque para listar no extrato
-
-### 3. Operação de Extrato
-
-* Listar todas as operações de Depósito e Saques realizadas na conta
-* No fim da listagem, mostrar o saldo atual da conta
-* Se o extrato estiver em branco, mostrar mensagem informando que não foram realizadas movimentações
-* Exibir valores no formato: ***R$ xxx.xx***
-
-
-Código:
-
-```python
+# Desafio: Sistema Bancario
+# - armazenar movimentacoes para mostrar no extrato
+# - mostrar valores no formato R$ xxx.xx
+# - mostrar mensagem de erro se valor do deposito nao for positivo 
+# - mostrar mensagem de erro se ultrapassar qtd limite de saques
+# - mostrar mensagem de erro se valor do saque ultrapassar limite por operacao
+# - mostrar mensagem de erro no saque se nao houver fundos
+# - mostrar saldo final no extrato
 
 saldo = 0.00
 extrato = []
@@ -81,5 +55,3 @@ while opcao!=0:
 
     else: 
         print("Operação inválida, tente novamente")
-
-```
