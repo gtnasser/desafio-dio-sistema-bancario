@@ -26,19 +26,20 @@ while opcao!=0:
             print("Valor de depósito inválido.")
 
     elif opcao==2:
-        valor = float(input("Informe o valor do saque: "))
-        if saques > SAQUES_MAX_QTD:
+        if saques >= SAQUES_MAX_QTD:
             print(f"Quantidade de saques excedeu o limite diário.")
-        elif valor > SAQUES_MAX_VALOR:
-            print(f"Valor excedeu o limite por saque.")
-        elif valor > saldo:
-            print("Não será possível realizar esta operação por falta de saldo.")
-        elif valor > 0:
-            saldo -= valor
-            extrato.append(f"Saque: R$ {valor:.2f}")
-            saques -= 1
         else:
-            print("Valor de saque inválido.")
+            valor = float(input("Informe o valor do saque: "))
+            if  valor > SAQUES_MAX_VALOR:
+                print(f"Valor excedeu o limite por saque.")
+            elif valor > saldo:
+                print("Não será possível realizar esta operação por falta de saldo.")
+            elif valor > 0:
+                saldo -= valor
+                extrato.append(f"Saque: R$ {valor:.2f}")
+                saques += 1
+            else:
+                print("Valor de saque inválido.")
 
     elif opcao==3:
         print("\n" + " EXTRATO ".center(40, "="))
@@ -47,7 +48,7 @@ while opcao!=0:
         else:
             for m in extrato:
                 print(m)
-            print(f"\nSaldo atual: R$ {saldo:3.2f}")
+            print(f"\nSaldo atual: R$ {saldo:.2f}")
         print("=".center(40, "="), end="\n")
 
     elif opcao ==0:
