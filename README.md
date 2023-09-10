@@ -73,7 +73,7 @@ while opcao!=0:
         else:
             for m in extrato:
                 print(m)
-            print(f"\nSaldo final: R$ {saldo:3.2f}")
+            print(f"\nSaldo atual: R$ {saldo:3.2f}")
         print("=".center(40, "="), end="\n")
 
     elif opcao ==0:
